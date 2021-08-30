@@ -1,13 +1,204 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+  background: #eee;
+  color: #333;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#main {
+  margin: 1rem auto;
+  margin-bottom: 32vh;
+}
+
+h1 {
+  color: #ad1457;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+.addBookButton {
+  position: fixed;
+  top: -0.5rem;
+  right: -0.5rem;
+
+  border: 8px solid hsl(0deg 0% 100% / 75%);
+  background: #ad1457;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.5rem;
+  padding: 0.35rem 1rem;
+  margin: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.addBookButton:hover {
+  border: 8px solid hsl(0deg 0% 100% / 65%);
+}
+.addBookButton:active {
+  border: 8px solid hsl(0deg 0% 100% / 35%);
+}
+
+ul {
+  list-style: none;
+}
+
+.text-centered {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+}
+
+/* By The Net Ninja */
+
+#book-list {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  gap: 1.5rem 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+#book-list li {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #880e4f;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: #880e4f;
+}
+
+form {
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 1rem;
+}
+
+form h3 {
+  color: #ad1457;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #880e4f;
+}
+
+form .field {
+  display: grid;
+  grid-template-columns: 1fr 1.75fr;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+form label {
+  padding: 6px;
+}
+
+form input,
+form select {
+  padding: 6px;
+}
+
+form button {
+  color: #fff;
+  font-size: 1.25rem;
+  background: #ad1457;
+  border: 0;
+  padding: 5px 15px;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#book-details {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background: #ad1457;
+  padding: 30px;
+  padding-bottom: 0;
+  overflow: auto;
+  box-shadow: -2px -3px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-details__container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.book-details__container li {
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  margin-right: 8px;
+  margin-top: 8px;
+  border-radius: 25px;
+}
+
+#book-details footer {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 5px;
+  text-align: center;
+}
+#book-details footer a {
+  color: inherit;
+  text-decoration-style: wavy;
+  padding: 2px 4px;
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  transform: rotate(0deg);
+}
+#book-details footer a:hover {
+  color: #880e4f;
+  background: #fff;
+  text-decoration: none;
+  transform: rotate(-10deg);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    margin: 0 2rem;
+  }
+
+  .addBookButton {
+    position: fixed;
+    top: -0.65rem;
+    right: -0.65rem;
+
+    font-size: 2rem;
+    padding: 0.2rem 0.75rem;
+  }
 }

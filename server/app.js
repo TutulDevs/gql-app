@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
 const mongoose = require("mongoose");
@@ -10,9 +11,8 @@ const app = express();
 app.use(cors());
 
 // connect to mLab db
-mongoose.connect(
-  "mongodb+srv://tutul:tutul3470@cluster0.y8ikm.mongodb.net/gql-1?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.MLAB_API_KEY);
+
 mongoose.connection.once("open", () => {
   console.log("connected to mLab 🚀");
 });

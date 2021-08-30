@@ -12,7 +12,6 @@ app.use(cors());
 
 // connect to mLab db
 mongoose.connect(process.env.MLAB_API_KEY);
-
 mongoose.connection.once("open", () => {
   console.log("connected to mLab 🚀");
 });
